@@ -1,46 +1,58 @@
+<!--
+  ~ TeamPulse Integration Plugin
+  ~ Copyright (c) 2014
+  ~ by T73 Biz (http://t73.biz)
+  -->
+
 <idea-plugin version="2">
-  <id>com.yourcompany.unique.plugin.id</id>
-  <name>Plugin display name here</name>
-  <version>1.0</version>
-  <vendor email="support@yourcompany.com" url="http://www.yourcompany.com">YourCompany</vendor>
+  <id>biz.t73.teamPulseIntegration</id>
+  <name>TeamPulse Integration</name>
+  <version>0.1</version>
+  <vendor email="rchaplin@t73.biz" url="https://github.com/t73biz/TeamPulseIntegration">T73 Biz</vendor>
 
   <description><![CDATA[
-      Enter short description for your plugin here.<br>
-      <em>most HTML tags may be used</em>
+      Integrate TeamPulse into IntelliJ Platform<br />
+      This is to be used with the Telerik TeamPulse Platform.
     ]]></description>
 
   <change-notes><![CDATA[
-      Add change notes here.<br>
-      <em>most HTML tags may be used</em>
+      <html>
+        <head>
+          <title>TeamPulse Integration Plugin Change Log</title>
+        </head>
+        <body>
+          <h1>Change Log</h1>
+          <ul>
+            <li> 0.1
+              <ul>
+                <li>Configuration Implementation</li>
+              </ul>
+            </li>
+          </ul>
+        </body>
+      </html>
     ]]>
   </change-notes>
-
-  <!-- please see http://confluence.jetbrains.com/display/IDEADEV/Build+Number+Ranges for description -->
   <idea-version since-build="131"/>
-
-  <!-- please see http://confluence.jetbrains.com/display/IDEADEV/Plugin+Compatibility+with+IntelliJ+Platform+Products
-       on how to target different products -->
-  <!-- uncomment to enable plugin in all products
   <depends>com.intellij.modules.lang</depends>
-  -->
-
-  <extensions defaultExtensionNs="com.intellij">
-    <!-- Add your extensions here -->
-  </extensions>
-
-  <application-components>
-    <!-- Add your application components here -->
-  </application-components>
-
   <project-components>
-    <!-- Add your project components here -->
+      <component>
+          <implementation-class>biz.t73.tpi.config.ConfigureValues</implementation-class>
+      </component>
+      <component>
+          <implementation-class>biz.t73.tpi.ProjectPlugin</implementation-class>
+          <interface-class>biz.t73.tpi.ProjectPlugin</interface-class>
+      </component>
+      <component>
+          <implementation-class>biz.t73.tpi.config.ConfigureProject</implementation-class>
+          <option name="workspace" value="true"/>
+      </component>
   </project-components>
-
   <actions>
       <group id="TeamPulseIntegration.MainTeamPulseMenu" text="Team_Pulse" description="Team Pulse Integration">
           <add-to-group group-id="MainMenu" anchor="last"  />
-          <action id="TeamPulseIntegration.ConfigureAction" class="ConfigureActionClass" text="Configure ..."
-                  description="The action implemented by the ConfigureActionClass">
+          <action id="TeamPulseIntegration.biz.t73.tpi.config.ConfigureAction" class="biz.t73.tpi.config.ConfigureAction" text="Configure ..."
+                  description="Configure TeamPulse Integration">
               <keyboard-shortcut keymap="$default" first-keystroke="ctrl alt T"/>
           </action>
       </group>
