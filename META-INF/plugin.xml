@@ -4,6 +4,7 @@
   ~ by T73 Biz (http://t73.biz)
   -->
 
+<!--suppress XmlUnboundNsPrefix -->
 <idea-plugin version="2">
   <id>biz.t73.teamPulseIntegration</id>
   <name>TeamPulse Integration</name>

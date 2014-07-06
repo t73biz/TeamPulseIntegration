@@ -12,7 +12,8 @@ import biz.t73.tpi.config.ConfigureProject;
 import biz.t73.tpi.config.ConfigureValues;
 import org.jetbrains.annotations.NotNull;
 
-public class ProjectPlugin implements ProjectComponent
+@SuppressWarnings("FieldCanBeLocal")
+class ProjectPlugin implements ProjectComponent
 {
     private Project project;
 

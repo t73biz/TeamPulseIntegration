@@ -7,10 +7,7 @@
 package biz.t73.tpi.config;
 
 import com.intellij.openapi.components.ProjectComponent;
-import com.intellij.openapi.project.Project;
 import org.jetbrains.annotations.NotNull;
-
-import java.awt.*;
 
 public class ConfigureValues implements ProjectComponent
 {

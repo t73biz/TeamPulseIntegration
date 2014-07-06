@@ -8,7 +8,7 @@ package biz.t73.tpi.config;
 
 import javax.swing.*;
 
-public class ConfigurePanel
+class ConfigurePanel
 {
     public JPanel configPanel;
     public JTextField configUsernameInput;

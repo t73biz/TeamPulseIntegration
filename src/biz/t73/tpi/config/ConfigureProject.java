@@ -6,15 +6,12 @@
 
 package biz.t73.tpi.config;
 
-import com.intellij.ide.ui.LafManager;
-import com.intellij.ide.ui.UISettings;
 import com.intellij.openapi.components.State;
 import com.intellij.openapi.components.PersistentStateComponent;
 import com.intellij.openapi.components.ProjectComponent;
 import com.intellij.openapi.options.Configurable;
 import com.intellij.openapi.options.ConfigurationException;
 
-import com.intellij.openapi.project.Project;
 import org.jetbrains.annotations.Nls;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -24,14 +21,9 @@ import javax.swing.*;
 @State(name = "TeamPulseIntegration", storages = {@com.intellij.openapi.components.Storage(id = "config", file = "$WORKSPACE_FILE$")})
 public class ConfigureProject implements Configurable, PersistentStateComponent<ConfigureValues>, ProjectComponent
 {
-    private JComponent configComponent;
     private ConfigureValues configureValues;
     private ConfigurePanel configurePanel;
 
-    /**
-     * Constructor
-     * @param configureValues
-     */
     public ConfigureProject(ConfigureValues configureValues) {
         this.configureValues = configureValues;
     }
@@ -71,6 +63,7 @@ public class ConfigureProject implements Configurable, PersistentStateComponent<
         /**
          * TODO: Convert this to getPassword and store as a string instead of a char[]
          */
+        //noinspection deprecation
         configureValues.configPassword = configurePanel.configPasswordInput.getText();
         configureValues.configUsername = configurePanel.configUsernameInput.getText();
     }
